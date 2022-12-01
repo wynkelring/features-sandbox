@@ -9,5 +9,5 @@ import java.io.Serializable;
 @Data
 @SuperBuilder
 @NoArgsConstructor
-public class AbstractQuery implements Serializable {
+public abstract class AbstractQuery implements Serializable {
 }

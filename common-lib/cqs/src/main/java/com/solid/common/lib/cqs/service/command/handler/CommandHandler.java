@@ -5,13 +5,13 @@ import com.solid.common.lib.cqs.service.command.result.AbstractCommandResult;
 import org.springframework.transaction.annotation.Transactional;
 
 public interface CommandHandler<C extends AbstractCommand, R extends AbstractCommandResult> {
-    R preHandle(C command);
+    R postValidate(C command);
 
     void validate(C command);
 
     @Transactional
     default R handle(C command) {
         validate(command);
-        return preHandle(command);
+        return postValidate(command);
     }
 }

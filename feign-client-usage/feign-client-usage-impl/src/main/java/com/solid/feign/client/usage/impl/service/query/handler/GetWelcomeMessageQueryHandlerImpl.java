@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class GetWelcomeMessageQueryHandlerImpl implements GetWelcomeMessageQueryHandler {
     @Override
-    public GetWelcomeMessageQueryResult preHandle(GetWelcomeMessageQuery query) {
+    public GetWelcomeMessageQueryResult postValidate(GetWelcomeMessageQuery query) {
         return GetWelcomeMessageQueryResult.builder().message("Welcome").build();
     }
 
